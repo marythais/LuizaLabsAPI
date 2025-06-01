@@ -32,3 +32,4 @@ C:\Users\Mari\source\repos\LuizaLabs\LuizaLabs\obj\Debug\net8.0\refint\LuizaLabs
 C:\Users\Mari\source\repos\LuizaLabs\LuizaLabs\obj\Debug\net8.0\LuizaLabs.pdb
 C:\Users\Mari\source\repos\LuizaLabs\LuizaLabs\obj\Debug\net8.0\LuizaLabs.genruntimeconfig.cache
 C:\Users\Mari\source\repos\LuizaLabs\LuizaLabs\obj\Debug\net8.0\ref\LuizaLabs.dll
+C:\Users\Mari\source\repos\LuizaLabs\LuizaLabs\obj\Debug\net8.0\LuizaLabs.sourcelink.json

@@ -1,41 +1,31 @@
 [
   {
-    "ContainingType": "LuizaLabs.Controllers.ProdutoController",
-    "Method": "CriarProduto",
-    "RelativePath": "Produto",
+    "ContainingType": "LuizaLabs.Controllers.OutlistController",
+    "Method": "Adicionar",
+    "RelativePath": "Outlist",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "novoProduto",
-        "Type": "LuizaLabs.Models.Produto",
+        "Name": "request",
+        "Type": "LuizaLabs.Models.AdicionarOutlistRequest",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "LuizaLabs.Models.Produto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "LuizaLabs.Controllers.ProdutoController",
-    "Method": "GetTodos",
-    "RelativePath": "Produto",
+    "ContainingType": "LuizaLabs.Controllers.OutlistController",
+    "Method": "ListarTodos",
+    "RelativePath": "Outlist",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[LuizaLabs.Models.Produto, LuizaLabs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[LuizaLabs.Models.OutlistItem, LuizaLabs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -46,9 +36,9 @@
     ]
   },
   {
-    "ContainingType": "LuizaLabs.Controllers.ProdutoController",
-    "Method": "DeletarProduto",
-    "RelativePath": "Produto/{id}",
+    "ContainingType": "LuizaLabs.Controllers.OutlistController",
+    "Method": "Remover",
+    "RelativePath": "Outlist/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -62,10 +52,10 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "LuizaLabs.Controllers.ProdutoController",
-    "Method": "GetPorId",
-    "RelativePath": "Produto/{id}",
-    "HttpMethod": "GET",
+    "ContainingType": "LuizaLabs.Controllers.OutlistController",
+    "Method": "AlterarVigencia",
+    "RelativePath": "Outlist/{id}/vigencia",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -73,19 +63,30 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "LuizaLabs.Controllers.OutlistController\u002BAlterarVigenciaRequest",
+        "IsRequired": true
       }
     ],
-    "ReturnTypes": [
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LuizaLabs.Controllers.OutlistController",
+    "Method": "VerificarSeEstaNaOutlist",
+    "RelativePath": "Outlist/verificar/{produtoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Type": "LuizaLabs.Models.Produto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "produtoId",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
-    ]
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "LuizaLabs.Controllers.ProdutoController",
@@ -106,16 +107,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "LuizaLabs.Controllers.ProdutoController",
-    "Method": "PopularProdutos",
-    "RelativePath": "Produto/popular",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   }
 ]

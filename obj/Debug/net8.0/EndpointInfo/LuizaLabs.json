@@ -5,68 +5,39 @@
     "version": "1.0"
   },
   "paths": {
-    "/Produto/popular": {
+    "/Outlist": {
       "post": {
         "tags": [
-          "Produto"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/Produto": {
-      "post": {
-        "tags": [
-          "Produto"
+          "Outlist"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Produto"
+                "$ref": "#/components/schemas/AdicionarOutlistRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Produto"
+                "$ref": "#/components/schemas/AdicionarOutlistRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Produto"
+                "$ref": "#/components/schemas/AdicionarOutlistRequest"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Produto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Produto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Produto"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
       "get": {
         "tags": [
-          "Produto"
+          "Outlist"
         ],
         "responses": {
           "200": {
@@ -76,7 +47,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Produto"
+                    "$ref": "#/components/schemas/OutlistItem"
                   }
                 }
               },
@@ -84,7 +55,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Produto"
+                    "$ref": "#/components/schemas/OutlistItem"
                   }
                 }
               },
@@ -92,7 +63,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Produto"
+                    "$ref": "#/components/schemas/OutlistItem"
                   }
                 }
               }
@@ -101,10 +72,10 @@
         }
       }
     },
-    "/Produto/{id}": {
+    "/Outlist/{id}": {
       "delete": {
         "tags": [
-          "Produto"
+          "Outlist"
         ],
         "parameters": [
           {
@@ -122,10 +93,12 @@
             "description": "OK"
           }
         }
-      },
-      "get": {
+      }
+    },
+    "/Outlist/{id}/vigencia": {
+      "put": {
         "tags": [
-          "Produto"
+          "Outlist"
         ],
         "parameters": [
           {
@@ -138,29 +111,56 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Produto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Produto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Produto"
-                }
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AlterarVigenciaRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AlterarVigenciaRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AlterarVigenciaRequest"
               }
             }
           }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
+      }
+    },
+    "/Outlist/verificar/{produtoId}": {
+      "get": {
+        "tags": [
+          "Outlist"
+        ],
+        "parameters": [
+          {
+            "name": "produtoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Produto/{id}": {
       "put": {
         "tags": [
           "Produto"
@@ -205,6 +205,63 @@
   },
   "components": {
     "schemas": {
+      "AdicionarOutlistRequest": {
+        "type": "object",
+        "properties": {
+          "produtoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataVigenciaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataVigenciaTermino": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AlterarVigenciaRequest": {
+        "type": "object",
+        "properties": {
+          "dataInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataTermino": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutlistItem": {
+        "required": [
+          "produtoId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "produtoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataVigenciaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataVigenciaTermino": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
       "Produto": {
         "required": [
           "nome"
@@ -223,6 +280,14 @@
             "minimum": 0,01,
             "type": "number",
             "format": "double"
+          },
+          "dataVigenciaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataVigenciaTermino": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false
