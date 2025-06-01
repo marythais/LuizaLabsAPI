@@ -108,5 +108,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LuizaLabs.Controllers.ProdutoController",
+    "Method": "PopularProdutos",
+    "RelativePath": "Produto/popular",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

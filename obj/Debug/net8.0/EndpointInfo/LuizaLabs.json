@@ -160,6 +160,18 @@
         }
       }
     },
+    "/Produto/popular": {
+      "post": {
+        "tags": [
+          "Produto"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Produto/{id}": {
       "put": {
         "tags": [

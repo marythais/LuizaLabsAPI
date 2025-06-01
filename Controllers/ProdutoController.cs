@@ -20,7 +20,18 @@ namespace LuizaLabs.Controllers
         {
             _produtoService = new ProdutoService();
             _outlistService = new OutlistService(); 
+
+
         }
+
+        // API para popular a coleção de produtos com 40 produtos aleatórios
+        [HttpPost("popular")]
+        public IActionResult PopularProdutos()
+        {
+            _produtoService.PopularProdutos();
+            return Ok("Banco populado com 40 produtos aleatórios!");
+        }
+
 
         // PUT api/produto/{id}
         [HttpPut("{id}")]

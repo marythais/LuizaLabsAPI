@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LuizaLabs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7573d5079fe7e57ce5ece6753025ede64f6de45a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+002aef26f420b48eb01e3f39dd0fec07294bbff1")]
 [assembly: System.Reflection.AssemblyProductAttribute("LuizaLabs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LuizaLabs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
