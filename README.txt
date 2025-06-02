@@ -11,7 +11,7 @@ Este projeto é uma API .NET com armazenamento usando **LiteDB** (banco de dados
 ## Como rodar o projeto
 
 1. Clone o repositório:
-   - git clone https://github.com/seu-usuario/seu-projeto.git
+   - git clone https://github.com/marythais/LuizaLabsAPI
 
 2. Baixe o LiteDB:
    - Acesse o GitHub e baixe o arquivo executável do LiteDB (https://github.com/litedb-org/LiteDB.Studio/releases)
